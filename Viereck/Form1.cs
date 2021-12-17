@@ -32,27 +32,12 @@ namespace Viereck
                 }
             }
         }
-        private void Form1_MouseClick(object sender, MouseEventArgs e)// anderes event
-        {
-            while (MouseButtons.Left == Control.MouseButtons)
-            {
-            }
-            Point point2 = PointToClient(Control.MousePosition);//OKasdopaksdopaksdopaksd
 
-            if (e.Location.X == point2.X && e.Location.Y == point2.Y)
-            {
-                rectangles.Add(new Rectangle(e.Location.X - groesseRechteck.X / 2, e.Location.Y - groesseRechteck.Y / 2, groesseRechteck.X, groesseRechteck.Y));
-            }
-            else
-            {
-                rectangles.Add(new Rectangle(e.Location.X,e.Location.Y, 300, 300));
-            }
-            MessageBox.Show("alte position: " + e.Location.ToString(), "Neue Position: " + point2.ToString());
-            Refresh();
-        }
-        private Point PointToClient(Point point)
+
+        private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
-            return new Point(point.X - Location.X - 8, point.Y - Location.Y - 31);
+            rectangles.Add(new Rectangle(e.Location.X - groesseRechteck.X / 2, e.Location.Y - groesseRechteck.Y / 2, groesseRechteck.X, groesseRechteck.Y));
+            Refresh();
         }
     }
 }
