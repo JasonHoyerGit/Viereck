@@ -32,13 +32,12 @@ namespace Viereck
                 }
             }
         }
-        private void Form1_MouseClick(object sender, MouseEventArgs e)
+        private void Form1_MouseClick(object sender, MouseEventArgs e)// anderes event
         {
-            Point point1 = e.Location;
             while (MouseButtons.Left == Control.MouseButtons)
             {
             }
-            Point point2 = //OKasdopaksdopaksdopaksd
+            Point point2 = PointToClient(Control.MousePosition);//OKasdopaksdopaksdopaksd
 
             if (e.Location.X == point2.X && e.Location.Y == point2.Y)
             {
@@ -53,7 +52,7 @@ namespace Viereck
         }
         private Point PointToClient(Point point)
         {
-
+            return new Point(point.X - Location.X - 8, point.Y - Location.Y - 31);
         }
     }
 }
