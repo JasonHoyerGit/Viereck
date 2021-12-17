@@ -28,7 +28,7 @@ namespace Viereck
                 graphics.FillRectangle(blueBrush, rectangle);
             }
         }
-
+        //Hallo
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
             Point point1 = e.Location;
